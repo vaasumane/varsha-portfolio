@@ -8,7 +8,7 @@ const Header = () => {
             <div className="bg-gradient-to-r from-blue-400 to-pink-500 text-transparent bg-clip-text">
               <h1 className="text-4xl font-bold">VARSHA MANE</h1>
             </div>
-            <button className="btn btn-sm">Work with me</button>
+            <a href="#contact"><button className="btn btn-sm">Work with me</button></a>
           </div>
         </div>
       </header>
