@@ -7,6 +7,7 @@ import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 import About from './Components/About';
 import Header from './Components/Header';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -14,6 +15,8 @@ function App() {
   return (
     <>
     <div className='bg-site bg-no-repeat bg-cover overflow-hidden text-white'>
+    <ToastContainer />
+
       <Header />
     <Home />
     <About/>

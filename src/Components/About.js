@@ -44,7 +44,7 @@ const About = () => {
               <div className="flex max-w-max gap-x-6 item-center mb-12 mx-auto lg:mx-0">
                 <a href="#contact"><button className="btn btn-lg ">Contact me</button></a>
 
-                <a href="#" className="text-gradient text-2xl py-3 ">
+                <a href="./Varsharani_Mane_Resume.pdf" download="./Varsharani_Mane_Resume.pdf" className="text-gradient text-2xl py-3 ">
                   My portfolio
                 </a>
               </div>

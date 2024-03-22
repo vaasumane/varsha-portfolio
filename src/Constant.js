@@ -47,15 +47,16 @@ export const skills_data = [
 ]
 
 export const react_projects = [
-    {
-        "title": "Thar Trek",
-        "image": "./projects/thar-trek.png",
-        "link": "https://thar-trek.netlify.app/"
-    },
+    
     {
         "title": "Healthcare",
         "image": "./projects/healthcare.png",
         "link": "https://sitehealth.netlify.app/"
+    },
+    {
+        "title": "Thar Trek",
+        "image": "./projects/thar-trek.png",
+        "link": "https://thar-trek.netlify.app/"
     },
     {
         "title": "Github Signup",

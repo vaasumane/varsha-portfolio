@@ -5,9 +5,9 @@ import { FaLink } from "react-icons/fa";
 const Projects = () => {
   return (
     <>
-      <div className="section " id="projects">
+      <div className="section pt-0" id="projects">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-5 justify-center">
+          <div className="grid lg:grid-cols-2  gap-5 justify-center">
             <div
               className="mb-5"
               data-aos="zoom-in"
@@ -26,8 +26,8 @@ const Projects = () => {
                 </p>
               </div>
             </div>
-            {react_projects.map((project) => (
-              <div  data-aos="zoom-in"
+            {react_projects.map((project,index) => (  
+              <div key={index}  data-aos="zoom-in"
               data-aos-offset="200"
               data-aos-easing="ease-in" className=" group relative overflow-hidden border-2 border-white/50 rounded-xl ">
                 <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>

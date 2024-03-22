@@ -47,7 +47,7 @@ const Work = () => {
                   data-aos-offset="200"
                   data-aos-easing="ease-in"
                   data-aos-duration="700"
-                  className="flex flex-wrap gap-4 item-center justify-center "
+                  className="flex flex-wrap gap-4 item-center justify-center mt-10 lg:mt-0" 
                 >
                   {skills_data.map((skill, index) => {
                     return (
@@ -62,8 +62,8 @@ const Work = () => {
             </div>
           </div>
           <div className="flex flex-wrap  gap-7 pt-10 pb-10">
-            {php_projects.map((project) => (
-              <div
+            {php_projects.map((project,index) => (
+              <div key={index}
                 data-aos="zoom-in"
                 data-aos-offset="200"
                 data-aos-easing="ease-in"
