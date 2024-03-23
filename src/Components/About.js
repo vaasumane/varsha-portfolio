@@ -33,16 +33,16 @@ const About = () => {
               <h1 className="text-gradient text-4xl mb-5">
               ABOUT ME
               </h1>
-              <div className="mb-6 text-4xl leading-[1]">               
+              <div className="mb-6 text-3xl lg:text-4xl leading-[1]">               
               <span>
               I am a exerienced Web Developer with 2 Years of Expertise
               </span>
               </div>
               <div>
-                <p className="text-sm pb-5">With over two years of experience in PHP (Codeigniter), JavaScript, HTML, and CSS, I specialize in crafting intuitive web solutions. Proficient in Bootstrap and equipped with knowledge of React, I am dedicated to exceeding client expectations through visually appealing designs</p>
+                <p className="text-md pb-5">With over two years of experience in PHP (Codeigniter), JavaScript, HTML, and CSS, I specialize in crafting intuitive web solutions. Proficient in Bootstrap and equipped with knowledge of React, I am dedicated to exceeding client expectations through visually appealing designs</p>
               </div>
               <div className="flex max-w-max gap-x-6 item-center mb-12 mx-auto lg:mx-0">
-                <a href="#contact"><button className="btn btn-lg ">Contact me</button></a>
+                <a href="#contact"><button className="btn btn-sm lg:btn-lg ">Contact me</button></a>
 
                 <a href="./Varsharani_Mane_Resume.pdf" download="./Varsharani_Mane_Resume.pdf" className="text-gradient text-2xl py-3 ">
                   My portfolio

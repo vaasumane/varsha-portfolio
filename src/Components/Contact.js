@@ -58,7 +58,7 @@ const Contact = () => {
               <input type="text" className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all" placeholder="Your name" name="name" required />
               <input type="text" className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all" placeholder="Your email" required name="email"/>
               <textarea className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none mb-12" placeholder="Your message" required name="message"></textarea>
-              <button className={loading ? 'btn btn-lg disabled' : 'btn btn-lg'} > {loading ? 'Loading...' : 'Send message'}</button>
+              <button className={loading ? 'btn btn-sm lg:btn-lg disabled' : 'btn btn-sm lg:btn-lg'} > {loading ? 'Loading...' : 'Send message'}</button>
             </form>
           </div>
         </div>

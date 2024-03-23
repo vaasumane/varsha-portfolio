@@ -18,7 +18,7 @@ const Projects = () => {
                 <h1 className="text-gradient text-4xl mb-5 uppercase">
                   My Latest<br></br> Work using React
                 </h1>
-                <p>
+                <p className="text-md font-secondary">
                   I've developed several websites using React.js, a powerful
                   JavaScript library for building user interfaces.With React.js,
                   I've been able to create seamless user experiences that
@@ -36,7 +36,7 @@ const Projects = () => {
                   alt={project.title}
                   className="group-hove:scale-125 transition-all duration-500"
                 />
-                <div className="absolute -bottom-full left-12 group-hover:bottom-16 transition-all duration-500 z-50">
+                <div className="absolute -bottom-full left-8 group-hover:bottom-8 transition-all duration-500 z-50">
                   <a
                     href={project.link}
                     target="_blank"

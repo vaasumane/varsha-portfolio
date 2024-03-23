@@ -61,7 +61,7 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap  gap-7 pt-10 pb-10">
+          <div className="flex flex-wrap  gap-7 pt-10 pb-10 justify-center">
             {php_projects.map((project,index) => (
               <div key={index}
                 data-aos="zoom-in"
@@ -76,8 +76,8 @@ const Work = () => {
                   alt={project.title}
                   className="group-hove:scale-125 transition-all duration-500 "
                 />
-                <div className="absolute -bottom-full left-12 group-hover:bottom-16 transition-all duration-500 z-50">
-                  <span className="ml-2 text-3xl font-semibold">
+                <div className="absolute -bottom-full left-8 group-hover:bottom-8 transition-all duration-500 z-50">
+                  <span className="text-3xl font-semibold">
                     {project.title}{" "}
                   </span>
                   {/* <p className="ml-2 text-fuchsia-500 ">{project.description} </p> */}
