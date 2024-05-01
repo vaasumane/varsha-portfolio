@@ -51,7 +51,7 @@ export const react_projects = [
   {
     title: "Thar Trek",
     image: "./projects/thar-trek.png",
-    link: "https://thar-trek.netlify.app/",
+    link: "https://thartrek.netlify.app/",
   },
   {
     title: "Github Signup",
@@ -59,9 +59,9 @@ export const react_projects = [
     link: "https://github-form.netlify.app/",
   },
   {
-    title: "Healthcare",
-    image: "./projects/healthcare.png",
-    link: "https://sitehealth.netlify.app/",
+    title: "YouTube Clone",
+    image: "./projects/mytube.png",
+    link: "https://youtubex-clone.netlify.app/",
   },
 ];
 export const php_projects = [
