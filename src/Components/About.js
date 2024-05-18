@@ -39,7 +39,7 @@ const About = () => {
               </span>
               </div>
               <div>
-                <p className="text-md pb-5">With over two years of experience in PHP (Codeigniter), JavaScript, HTML, and CSS, I specialize in crafting intuitive web solutions. Proficient in Bootstrap and equipped with knowledge of React, I am dedicated to exceeding client expectations through visually appealing designs</p>
+                <p className="text-md pb-5">With over two years of experience in PHP (Codeigniter,Laravel), JavaScript, HTML, and CSS, I specialize in crafting intuitive web solutions. Proficient in Bootstrap and equipped with knowledge of React, I am dedicated to exceeding client expectations through visually appealing designs</p>
               </div>
               <div className="flex max-w-max gap-x-6 item-center mb-12 mx-auto lg:mx-0">
                 <a href="#contact"><button className="btn btn-sm lg:btn-lg ">Contact me</button></a>

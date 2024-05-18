@@ -20,7 +20,7 @@ const Home = () => {
               className="flex-1 text-center font-secondary lg:text-left"
             >
               <h1 className="text-[35px] font-bold leading-[0.8] lg:text-[78px] mb-5">
-                VARSHA <span>MANE</span>
+            VARSHA <span>MANE</span>
               </h1>
               <div className="mb-6 text-[36px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]">
                 <span className="text-white mr-4">I am a </span>

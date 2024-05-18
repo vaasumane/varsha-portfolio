@@ -26,30 +26,36 @@ const Projects = () => {
                 </p>
               </div>
             </div>
-            {react_projects.map((project,index) => (  
-              <div key={index}  data-aos="zoom-in"
-              data-aos-offset="200"
-              data-aos-easing="ease-in" className=" group relative overflow-hidden border-2 border-white/50 rounded-xl ">
-                <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="group-hove:scale-125 transition-all duration-500"
-                />
-                <div className="absolute -bottom-full left-8 group-hover:bottom-8 transition-all duration-500 z-50">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center"
-                  >
-                    <FaLink />
+            {react_projects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                
+              >
+                <div
+                  data-aos="zoom-in"
+                  data-aos-offset="200"
+                  data-aos-easing="ease-in"
+                  className=" group relative overflow-hidden border-2 border-white/50 rounded-xl "
+                >
+                  <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="group-hove:scale-125 transition-all duration-500"
+                  />
+                  <div className="absolute -bottom-full left-8 group-hover:bottom-8 transition-all duration-500 z-50">
+                   <div className="flex items-center">
+                   <FaLink />
                     <span className="ml-2 text-fuchsia-500 text-3xl font-semibold">
                       {project.title}{" "}
                     </span>
-                  </a>
+                   </div>
+                  </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
