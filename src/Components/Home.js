@@ -33,8 +33,7 @@ const Home = () => {
                 />
               </div>
               <p className="mb-8 max-w-lg mx-auto lg:mx-0 text-md font-secondary">
-                Generate Lorem Ipsum placeholder text for use in your graphic,
-                print and web layout.{" "}
+              A highly skilled Web Developer with 3+ years of experience in PHP(Laravel, CodeIgniter), frontend technologies, and dynamic web applications, specializing in LOS ,LMS & e-commerce development. Eager to contribute to innovative and user-centric solutions that drive success.
               </p>
               <div className="flex max-w-max gap-x-6 item-center mb-12 mx-auto lg:mx-0">
                 <a href="#contact"><button className="btn btn-sm lg:btn-lg ">Contact me</button></a>
