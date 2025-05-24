@@ -25,7 +25,7 @@ const Home = () => {
               <div className="mb-6 text-[36px] lg:text-[40px] font-secondary font-semibold uppercase leading-[1]">
                 <span className="text-white mr-4">I am a </span>
                 <TypeAnimation
-                  sequence={["Full Stack Developer", 2000]}
+                  sequence={["Software Engineer", 2000]}
                   speed={50}
                   className="text-accent"
                   wrapper="span"
