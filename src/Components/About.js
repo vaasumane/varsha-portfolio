@@ -35,7 +35,7 @@ const About = () => {
               </h1>
               <div className="mb-6 text-3xl lg:text-4xl leading-[1]">               
               <span>
-              I am a exerienced Web Developer with 3 Years of Expertise
+              I am a exerienced Web Developer with 3+ Years of Expertise
               </span>
               </div>
               <div>
