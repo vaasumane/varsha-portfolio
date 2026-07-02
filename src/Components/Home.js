@@ -37,15 +37,15 @@ const Home = () => {
               </p>
               <div className="flex max-w-max gap-x-6 item-center mb-12 mx-auto lg:mx-0">
                 <a href="#contact"><button className="btn btn-sm lg:btn-lg ">Contact me</button></a>
-                <a href="./Varsharani_Mane_Resume.pdf" download="./Varsharani_Mane_Resume.pdf" className="text-gradient text-2xl py-3 ">
+                <a href="./Varsharani_Mane_Resume.pdf" download="./Varsharani_Mane_Resume.pdf" className="text-gradient text-2xl py-3 " rel="noreferrer">
                   My portfolio
                 </a>
               </div>
               <div className="flex text=[20px] gap-x-6 max-w-max mx-auto lg:mx-0">
-                <a href="https://github.com/vaasumane" target="_blank" className="text-3xl">
+                <a href="https://github.com/vaasumane" target="_blank" className="text-3xl" rel="noreferrer">
                   <FaGithub />
                 </a>
-                <a href="https://www.linkedin.com/in/varsharani-mane-a3b48821a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-3xl">
+                <a href="https://www.linkedin.com/in/varsharani-mane-a3b48821a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-3xl" rel="noreferrer">
                   <FaLinkedin />
                 </a>
               </div>

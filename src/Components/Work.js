@@ -52,7 +52,7 @@ const Work = () => {
                   {skills_data.map((skill, index) => {
                     return (
                       <div key={index}>
-                        <img src={skill.image} className="h-16" />
+                        <img src={skill.image} className="h-16" alt="Project preview"/>
                         <span>{skill.name}</span>
                       </div>
                     );
