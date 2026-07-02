@@ -7,7 +7,7 @@ import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 import About from './Components/About';
 import Header from './Components/Header';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
 
 
 
