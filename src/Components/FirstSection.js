@@ -1,219 +1,80 @@
-import React, { useEffect,useState } from "react";
-import { TypeAnimation } from "react-type-animation";
-import AOS from "aos";
-import "aos/dist/aos.css";
-const stats = [
-  { icon: "⚡", value: "3.5+", label: "Years" },
-//   { icon: "🖥️", value: "5+", label: "Systems" },
-//   { icon: "🔒", value: "3", label: "Reg. APIs" },
-  { icon: "🏆", value: "1", label: "Spot Award" },
-];
+import React from "react";
+import OrbitAnimation from "./OrbitAnimation";
+import { FaReact, FaLaravel, FaGithub } from "react-icons/fa";
+import { SiPhp, SiJavascript, SiMysql, SiTailwindcss } from "react-icons/si";
 
 export default function FirstSection() {
- 
-    const [activeMenuItem, setActiveMenuItem] = useState("home");
-  
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: "smooth" });
-    setActiveMenuItem(sectionId);
-  };
   return (
-    <div className="min-h-screen bg-[#020817] text-white relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-cyan-500/20 blur-[120px] rounded-full"></div>
+    <section className="min-h-screen bg-[#020817] text-white relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute left-1/3 top-1/3 w-96 h-96 rounded-full bg-cyan-500/20 blur-[120px]" />
 
-      {/* Grid */}
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:70px_70px]" />
-
-    
-
-      {/* Main */}
-      <section className="grid lg:grid-cols-2 min-h-[calc(100vh-90px)] items-center px-8 lg:px-16 relative z-10">
-        {/* Left */}
-        <div data-aos="zoom-in" data-aos-duration="2000">
-          <div className="inline-flex items-center text-sm gap-2 mt-4 px-5 py-2 rounded-full border border-cyan-600 bg-cyan-500/10 text-cyan-400 mb-8">
-            <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-            Available • Mumbai & Remote
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        {/* LEFT */}
+        <div>
+          <div className="inline-flex border border-cyan-600 rounded-full px-4 py-2 text-cyan-400 text-sm">
+            ● Available • Mumbai & Remote
           </div>
 
-          <h1 className="text-4xl lg:text-6xl font-bold leading-none">
-            Varsharani
-            <br />
-            <span className="text-cyan-400">Mane</span>
+          <h1 className="text-5xl lg:text-7xl font-bold mt-8">
+            Hi, I'm <br />
+            <span className="text-cyan-400">Varsharani Mane</span>
           </h1>
 
-          <p className="text-md text-gray-400 mt-6">
-            <span className="text-cyan-400 mr-4">$</span> 
-            <span className="jetben mr-4">Full-Stack Engineer </span> 
-            <span className="jetben mr-4">• Fintech & NBFC</span> 
-            <span className="jetben mr-4">• Laravel</span> 
-            <span className="jetben mr-4">• PHP</span> 
-            <span className="jetben mr-4">• React.js</span> 
-             
+          <p className="mt-6 text-xl text-gray-300">
+            Full Stack Engineer | Fintech & NBFC
           </p>
 
-          <p className="mt-6 text-gray-400 text-md max-w-2xl leading-8">
-            I build production-grade financial systems — Loan Origination, Loan
-            Management, credit risk engines — for NBFC and banking clients.
-            Currently leading dev at{" "}
-            <b className="text-white">SBI Factors Limited.</b>
+          <p className="mt-8 text-gray-400 leading-8 max-w-xl">
+            I build scalable financial systems, LOS/LMS platforms,
+            secure APIs and enterprise-grade fintech solutions.
           </p>
 
-          <div className="flex gap-4 mt-10 flex-wrap">
-            <button className="bg-cyan-400 text-black px-8 py-2 rounded-xl font-semibold hover:scale-105 transition" onClick={() => scrollToSection('projects')}>
-              View my work →
+          <div className="flex gap-4 mt-10">
+            <button className="bg-cyan-400 text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition">
+              View My Work
             </button>
 
-            <button className="border border-slate-700 px-8 py-2 rounded-xl font-semibold hover:border-cyan-400 transition" onClick={() => scrollToSection('contact')}>
-              Get in touch
+            <button className="border border-slate-700 px-6 py-3 rounded-xl hover:border-cyan-400 transition">
+              Contact Me
             </button>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-            {stats.map((item, index) => (
+            {[
+              ["3.5+", "Years"],
+              ["1", "Award"],
+              ["10+", "Projects"],
+              ["100%", "Delivery"],
+            ].map(([value, label]) => (
               <div
-                key={index}
-                className="bg-slate-900/80 border border-slate-800 rounded-2xl p-2"
+                key={label}
+                className="bg-slate-900/70 border border-slate-800 rounded-xl p-4"
               >
-                <div className="text-lg mb-3">{item.icon}</div>
-                <div className="text-xl font-bold">{item.value}</div>
-                <div className="text-gray-500 text-xs mt-2">{item.label}</div>
+                <div className="text-cyan-400 text-2xl font-bold">{value}</div>
+                <div className="text-gray-500 text-sm mt-2">{label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right Network */}
-        <div className="hidden lg:flex justify-center items-center relative h-full" data-aos="fade-up"
-          data-aos-offset="200"
-          data-aos-easing="ease-in"
-          data-aos-duration="1000">
-          <svg
-            className="absolute w-full h-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 300 400"
-          >
-            <line
-              x1="180"
-              y1="90"
-              x2="240"
-              y2="180"
-              stroke="#00C9A7"
-              stroke-width=".8"
-              stroke-dasharray="4 4"
-              stroke-opacity=".4"
-            ></line>
-            <line
-              x1="240"
-              y1="180"
-              x2="170"
-              y2="260"
-              stroke="#818CF8"
-              stroke-width=".8"
-              stroke-dasharray="4 4"
-              stroke-opacity=".4"
-            ></line>
-            <line
-              x1="240"
-              y1="180"
-              x2="260"
-              y2="290"
-              stroke="#00C9A7"
-              stroke-width=".8"
-              stroke-dasharray="4 4"
-              stroke-opacity=".4"
-            ></line>
-            <line
-              x1="170"
-              y1="260"
-              x2="260"
-              y2="290"
-              stroke="#F59E0B"
-              stroke-width=".8"
-              stroke-dasharray="4 4"
-              stroke-opacity=".4"
-            ></line>
-            <circle
-              cx="180"
-              cy="90"
-              r="22"
-              fill="rgba(0,201,167,.12)"
-              stroke="#00C9A7"
-              stroke-width="1"
-            ></circle>
-            <text
-              x="180"
-              y="90"
-              text-anchor="middle"
-              dominant-baseline="middle"
-              fill="#00C9A7"
-              font-family="JetBrains Mono,monospace"
-              font-size="10"
-            >
-              LOS
-            </text>
-            <circle
-              cx="240"
-              cy="180"
-              r="22"
-              fill="rgba(129,140,248,.12)"
-              stroke="#818CF8"
-              stroke-width="1"
-            ></circle>
-            <text
-              x="240"
-              y="180"
-              text-anchor="middle"
-              dominant-baseline="middle"
-              fill="#818CF8"
-              font-family="JetBrains Mono,monospace"
-              font-size="10"
-            >
-              LMS
-            </text>
-            <circle
-              cx="170"
-              cy="260"
-              r="22"
-              fill="rgba(245,158,11,.12)"
-              stroke="#F59E0B"
-              stroke-width="1"
-            ></circle>
-            <text
-              x="170"
-              y="260"
-              text-anchor="middle"
-              dominant-baseline="middle"
-              fill="#F59E0B"
-              font-family="JetBrains Mono,monospace"
-              font-size="10"
-            >
-              API
-            </text>
-            <circle
-              cx="260"
-              cy="290"
-              r="22"
-              fill="rgba(0,201,167,.12)"
-              stroke="#00C9A7"
-              stroke-width="1"
-            ></circle>
-            <text
-              x="260"
-              y="290"
-              text-anchor="middle"
-              dominant-baseline="middle"
-              fill="#00C9A7"
-              font-family="JetBrains Mono,monospace"
-              font-size="10"
-            >
-              SBIFL
-            </text>
-          </svg>
+        {/* RIGHT */}
+        <OrbitAnimation />
+      </div>
+
+      {/* Tech Stack */}
+      <div className="max-w-7xl mx-auto px-6 pb-10">
+        <div className="border border-slate-800 rounded-2xl bg-slate-900/50 px-6 py-4 flex flex-wrap gap-8 items-center">
+          <SiPhp size={28} />
+          <FaLaravel size={28} />
+          <FaReact size={28} />
+          <SiJavascript size={28} />
+          <SiMysql size={28} />
+          <FaGithub size={28} />
+          <SiTailwindcss size={28} />
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
