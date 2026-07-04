@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+body{
+  font-family: Inter, system-ui, sans-serif;
+}
+h2.sec {
+    font-family: 'Space Grotesk', system-ui;
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 700;
+    color: var(--tx);
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+.text-cyan-400{
+  color: #00c9a7 !important;
+}
+.jetben{
+  font-family: 'JetBrains Mono',monospace;
+}
+.ilink:hover{
+  color: #00c9a7;
+}
+.pf-card:hover {
+    border-color: rgba(0, 201, 167, .28);
+    transform: translateY(-2px);
+}
+.border-slate-700{
+  border-color: rgba(255,255,255,0.06)!important;
 }
