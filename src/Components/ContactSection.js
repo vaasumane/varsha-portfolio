@@ -53,7 +53,7 @@ export default function ContactSection() {
           className="mb-3.5 font-mono text-[13px] tracking-[4px] text-cyan-400"
           data-aos="fade-up"
         >
-          // GET IN TOUCH
+         GET IN TOUCH
         </p>
 
         <h2

@@ -97,7 +97,7 @@ export default function FourthSection() {
       <div className="relative z-10 mx-auto max-w-[1280px]">
         <div data-aos="fade-right">
           <p className="mb-3.5 font-mono text-[13px] tracking-[4px] text-cyan-400">
-            // SELECTED WORK
+            SELECTED WORK
           </p>
           <h2 className="mb-[60px] font-['Poppins',_'Inter',_system-ui,_sans-serif] text-[clamp(26px,4vw,40px)] font-extrabold">
             Things I've{" "}

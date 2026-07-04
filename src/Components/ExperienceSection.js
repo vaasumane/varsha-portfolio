@@ -101,7 +101,7 @@ export default function ExperienceSection() {
       <div className="relative z-10 mx-auto max-w-[1120px]">
         <div data-aos="fade-right">
           <p className="mb-3.5 font-mono text-[13px] tracking-[4px] text-cyan-400">
-            // WORK HISTORY
+            WORK HISTORY
           </p>
           <h2 className="mb-16 font-['Poppins',_'Inter',_system-ui,_sans-serif] text-[clamp(30px,4vw,44px)] font-extrabold tracking-[-0.01em]">
             Where I've{" "}

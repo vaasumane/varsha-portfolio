@@ -86,7 +86,7 @@ export default function SecondSection() {
         {/* ── LEFT ── */}
         <div>
           <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-400">
-            // about me
+            about me
           </p>
 
           <h2 className="font-['Poppins',system-ui,sans-serif] text-[clamp(26px,4vw,40px)] font-extrabold leading-[1.15] tracking-[-0.02em] text-slate-100">

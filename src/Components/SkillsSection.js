@@ -88,7 +88,7 @@ export default function SkillsSection() {
       <div className="relative z-10 mx-auto">
         <div className="mb-16 text-center" data-aos="fade-up">
           <p className="mb-3.5 font-mono text-[13px] tracking-[4px] text-cyan-400">
-            // TECH STACK
+            TECH STACK
           </p>
           <h2 className="font-['Poppins',_'Inter',_system-ui,_sans-serif] text-[clamp(26px,4vw,40px)] font-extrabold">
             Skills &{" "}
