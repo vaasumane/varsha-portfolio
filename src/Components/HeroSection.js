@@ -171,7 +171,6 @@ function HexNode({ node, cx, cy, containerSize, delay = 0 }) {
   const nodeH   = nodeW;
 
   // label offset from node center
-  const labelGap = nodeW * 0.75;
   let labelStyle = { position: "absolute", whiteSpace: "nowrap", textAlign: "center" };
   if (node.labelPos === "top")    labelStyle = { ...labelStyle, bottom: "100%", left: "50%", transform: "translateX(-50%)", paddingBottom: 6 };
   if (node.labelPos === "bottom") labelStyle = { ...labelStyle, top:    "100%", left: "50%", transform: "translateX(-50%)", paddingTop:  6 };
@@ -327,7 +326,6 @@ export default function HeroSection() {
       display: "flex",
       flexDirection: "column",
     }}>
-      {/* global keyframes */}
       
 
       {/* Starfield */}
