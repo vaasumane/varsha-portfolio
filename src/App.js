@@ -1,12 +1,12 @@
 import React ,{useEffect}from 'react'
 import './App.css';
-import Footer from './Components/Footer';
-import Home from './Components/Home';
-import Work from './Components/Work';
-import Projects from './Components/Projects';
-import Contact from './Components/Contact';
-import About from './Components/About';
-import Header from './Components/Header';
+// import Footer from './Components/Footer';
+// import Home from './Components/Home';
+// import Work from './Components/Work';
+// import Projects from './Components/Projects';
+// import Contact from './Components/Contact';
+// import About from './Components/About';
+// import Header from './Components/Header';
 import SecondSection from './Components/AboutSection';
 import AOS from "aos";
 import "aos/dist/aos.css";
