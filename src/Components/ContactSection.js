@@ -4,24 +4,30 @@ import { FaGithub, FaLink, FaEnvelope, FaArrowRight } from "react-icons/fa";
 const contacts = [
   {
     Icon: FaEnvelope,
-    color: "#F472B6",
-    glow: "rgba(244,114,182,0.5)",
+    text: "text-pink-400",
+    grad: "from-pink-400/[.13] to-pink-400/[.33]",
+    border: "border-pink-400",
+    glow: "shadow-[0_0_12px_rgba(244,114,182,0.5)]",
     label: "Email",
     value: "manevarsharani2005@gmail.com",
     link: "mailto:manevarsharani2005@gmail.com",
   },
   {
     Icon: FaLink,
-    color: "#00E5FF",
-    glow: "rgba(0,229,255,0.5)",
+    text: "text-cyan-400",
+    grad: "from-cyan-400/[.13] to-cyan-400/[.33]",
+    border: "border-cyan-400",
+    glow: "shadow-[0_0_12px_rgba(0,229,255,0.5)]",
     label: "Portfolio",
     value: "varshamane.vercel.app",
     link: "https://varshamane.vercel.app",
   },
   {
     Icon: FaGithub,
-    color: "#FBBF24",
-    glow: "rgba(251,191,36,0.5)",
+    text: "text-amber-400",
+    grad: "from-amber-400/[.13] to-amber-400/[.33]",
+    border: "border-amber-400",
+    glow: "shadow-[0_0_12px_rgba(251,191,36,0.5)]",
     label: "GitHub",
     value: "github.com/vaasumane",
     link: "https://github.com/vaasumane",
@@ -31,88 +37,38 @@ const contacts = [
 export default function ContactSection() {
   return (
     <section
-      style={{
-        background:
-          "radial-gradient(ellipse 75% 60% at 50% 30%, #0A0F1E 0%, #060B18 55%, #040810 100%)",
-        color: "#F1F5F9",
-        padding: "96px 6vw",
-        position: "relative",
-        overflow: "hidden",
-      }}
+      className="relative overflow-hidden bg-[radial-gradient(ellipse_75%_60%_at_50%_30%,#0A0F1E_0%,#060B18_55%,#040810_100%)] px-[6vw] py-24 text-slate-100"
       id="contact"
     >
       <style>{`
         @keyframes contactHexGlow {
-          0%,100% { box-shadow: 0 0 12px var(--glow); }
-          50%     { box-shadow: 0 0 22px var(--glow); }
+          0%,100% { filter: brightness(1); }
+          50%     { filter: brightness(1.35); }
         }
-        .contact-card {
-          background: rgba(255,255,255,.03);
-          border: 1px solid rgba(0,229,255,.14);
-          border-radius: 18px;
-          padding: 22px;
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          text-decoration: none;
-          transition: border-color .3s, transform .25s, box-shadow .3s;
-        }
-        .contact-card:hover {
-          border-color: rgba(0,229,255,.45);
-          transform: translateY(-4px);
-          box-shadow: 0 14px 34px rgba(0,229,255,.08);
-        }
-        .contact-hex {
-          clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
-          display: flex; align-items: center; justify-content: center;
-          animation: contactHexGlow 3s ease-in-out infinite;
-          flex-shrink: 0;
-        }
-        .contact-cta {
-          display: inline-flex; align-items: center; gap: 10px;
-          background: linear-gradient(135deg, #00E5FF, #0098B8);
-          color: #000; border: none; padding: 15px 32px;
-          border-radius: 12px; font-weight: 700; font-size: 15px;
-          text-decoration: none; transition: transform .2s, box-shadow .2s;
-        }
-        .contact-cta:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 28px rgba(0,229,255,.4);
-        }
+        .contact-hex { animation: contactHexGlow 3s ease-in-out infinite; }
       `}</style>
 
-      <div style={{ maxWidth: 880, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+      <div className="relative z-10 mx-auto max-w-[880px] text-center">
         <p
-          style={{ color: "#00E5FF", fontFamily: "monospace", fontSize: 13, letterSpacing: "4px", marginBottom: 14 }}
+          className="mb-3.5 font-mono text-[13px] tracking-[4px] text-cyan-400"
           data-aos="fade-up"
         >
           // GET IN TOUCH
         </p>
 
         <h2
-          style={{
-            fontSize: "clamp(26px,4vw,40px)",
-            fontWeight: 800,
-            marginBottom: 20,
-            fontFamily: "'Poppins','Inter',system-ui,sans-serif",
-          }}
+          className="mb-5 font-['Poppins',_'Inter',_system-ui,_sans-serif] text-[clamp(26px,4vw,40px)] font-extrabold"
           data-aos="fade-up"
           data-aos-delay="100"
         >
           Let's work{" "}
-          <span
-            style={{
-              background: "linear-gradient(90deg,#00E5FF,#A78BFA)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
+          <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
             together.
           </span>
         </h2>
 
         <p
-          style={{ color: "#94A3B8", fontSize: 14, lineHeight: 1.8, maxWidth: 560, margin: "0 auto" }}
+          className="mx-auto max-w-[560px] text-sm leading-8 text-slate-400"
           data-aos="fade-up"
           data-aos-delay="200"
         >
@@ -120,41 +76,26 @@ export default function ContactSection() {
           Let's build secure and scalable systems together.
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: 18,
-            marginTop: 48,
-            textAlign: "left",
-          }}
-        >
+        <div className="mt-12 grid grid-cols-1 gap-[18px] text-left sm:grid-cols-2 lg:grid-cols-3">
           {contacts.map((item, index) => (
             <a
               key={index}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-card"
               data-aos="zoom-in"
               data-aos-delay={index * 150}
+              className="flex items-center gap-4 rounded-2xl border border-cyan-400/[.14] bg-white/[.03] p-[22px] no-underline transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/45 hover:shadow-[0_14px_34px_rgba(0,229,255,0.08)]"
             >
               <div
-                className="contact-hex"
-                style={{
-                  width: 44,
-                  height: 44,
-                  background: `linear-gradient(135deg, ${item.color}22, ${item.color}55)`,
-                  border: `1.5px solid ${item.color}`,
-                  "--glow": item.glow,
-                }}
+                className={`contact-hex flex h-11 w-11 flex-shrink-0 items-center justify-center border bg-gradient-to-br [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)] ${item.grad} ${item.border} ${item.glow}`}
               >
-                <item.Icon size={17} color={item.color} />
+                <item.Icon size={17} className={item.text} />
               </div>
 
-              <div style={{ minWidth: 0 }}>
-                <p style={{ color: "#64748B", fontSize: 12, margin: 0 }}>{item.label}</p>
-                <p style={{ color: "#E2E8F0", fontWeight: 600, fontSize: 13, margin: "4px 0 0", wordBreak: "break-all" }}>
+              <div className="min-w-0">
+                <p className="m-0 text-xs text-slate-500">{item.label}</p>
+                <p className="mt-1 break-all text-[13px] font-semibold text-slate-200">
                   {item.value}
                 </p>
               </div>
@@ -164,10 +105,9 @@ export default function ContactSection() {
 
         <a
           href="mailto:manevarsharani2005@gmail.com"
-          className="contact-cta"
-          style={{ marginTop: 48 }}
           data-aos="fade-up"
           data-aos-delay="300"
+          className="mt-12 inline-flex items-center gap-2.5 rounded-xl border-none bg-gradient-to-br from-cyan-400 to-[#0098B8] px-8 py-[15px] text-[15px] font-bold text-black no-underline transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(0,229,255,0.4)]"
         >
           Send me a message <FaArrowRight size={13} />
         </a>

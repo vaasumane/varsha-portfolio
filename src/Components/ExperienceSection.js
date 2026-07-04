@@ -13,8 +13,12 @@ const experiences = [
     company: "SBI Factors Limited",
     duration: "Dec 2025 — Present",
     location: "Full-time · Mumbai",
-    color: "#00E5FF",
-    glow: "rgba(0,229,255,0.55)",
+    text: "text-cyan-400",
+    border: "border-cyan-400",
+    tagBorder: "border-cyan-400/[.33]",
+    tagBg: "bg-cyan-400/[.08]",
+    grad: "from-cyan-400/[.13] to-cyan-400/[.33]",
+    glow: "shadow-[0_0_14px_rgba(0,229,255,0.55)]",
     Icon: FaServer,
     current: true,
     badges: ["Laravel", "PHP 8", "MySQL", "React.js", "AJAX"],
@@ -29,8 +33,12 @@ const experiences = [
     company: "Kritva Technologies · Client: SBI Factors Limited",
     duration: "Jun 2024 — Nov 2025",
     location: "Full-time · Mumbai",
-    color: "#A78BFA",
-    glow: "rgba(167,139,250,0.55)",
+    text: "text-violet-400",
+    border: "border-violet-400",
+    tagBorder: "border-violet-400/[.33]",
+    tagBg: "bg-violet-400/[.08]",
+    grad: "from-violet-400/[.13] to-violet-400/[.33]",
+    glow: "shadow-[0_0_14px_rgba(167,139,250,0.55)]",
     Icon: FaCode,
     badge: "Spot Award · LOS Delivery",
     badges: ["Laravel", "OpenSSL", "CRIF API", "Karza API", "RBAC"],
@@ -45,8 +53,12 @@ const experiences = [
     company: "Noitavonne",
     duration: "May 2022 — May 2024",
     location: "Full-time · Kolhapur",
-    color: "#FBBF24",
-    glow: "rgba(251,191,36,0.55)",
+    text: "text-amber-400",
+    border: "border-amber-400",
+    tagBorder: "border-amber-400/[.33]",
+    tagBg: "bg-amber-400/[.08]",
+    grad: "from-amber-400/[.13] to-amber-400/[.33]",
+    glow: "shadow-[0_0_14px_rgba(251,191,36,0.55)]",
     Icon: FaLaptopCode,
     badges: ["Laravel", "React.js", "REST APIs", "SSO", "Stripe"],
     points: [
@@ -60,185 +72,87 @@ const experiences = [
     company: "Noitavonne",
     duration: "Nov 2021 — May 2022",
     location: "Internship · Kolhapur",
-    color: "#60A5FA",
-    glow: "rgba(96,165,250,0.55)",
+    text: "text-blue-400",
+    border: "border-blue-400",
+    tagBorder: "border-blue-400/[.33]",
+    tagBg: "bg-blue-400/[.08]",
+    grad: "from-blue-400/[.13] to-blue-400/[.33]",
+    glow: "shadow-[0_0_14px_rgba(96,165,250,0.55)]",
     Icon: FaGraduationCap,
     badges: [],
-    points: [
-      "Built CMS using CodeIgniter and interactive UI with AJAX/jQuery.",
-    ],
+    points: ["Built CMS using CodeIgniter and interactive UI with AJAX/jQuery."],
   },
 ];
 
 export default function ExperienceSection() {
   return (
     <section
-      style={{
-        background:
-          "radial-gradient(ellipse 80% 60% at 30% 20%, #0A0F1E 0%, #060B18 55%, #040810 100%)",
-        color: "#F1F5F9",
-        padding: "96px 6vw",
-        position: "relative",
-        overflow: "hidden",
-      }}
+      className="relative overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_30%_20%,#0A0F1E_0%,#060B18_55%,#040810_100%)] px-[6vw] py-24 text-slate-100"
       id="experience"
     >
       <style>{`
         @keyframes expGlowPulse {
-          0%,100% { box-shadow: 0 0 14px var(--glow), 0 0 0 rgba(0,0,0,0); }
-          50%     { box-shadow: 0 0 26px var(--glow), 0 0 44px var(--glow); }
+          0%,100% { filter: brightness(1); }
+          50%     { filter: brightness(1.35); }
         }
-        .exp-card {
-          background: rgba(255,255,255,.03);
-          border: 1px solid rgba(0,229,255,.14);
-          border-radius: 18px;
-          padding: 28px clamp(18px,3vw,32px);
-          transition: border-color .3s, transform .25s, box-shadow .3s;
-        }
-        .exp-card:hover {
-          border-color: rgba(0,229,255,.45);
-          transform: translateY(-3px);
-          box-shadow: 0 12px 34px rgba(0,229,255,.08);
-        }
-        .exp-badge-pill {
-          font-size: 11px; font-weight: 600; padding: 5px 12px;
-          border-radius: 999px; font-family: monospace;
-          border: 1px solid; white-space: nowrap;
-        }
-        .exp-hexnode {
-          clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
-          display: flex; align-items: center; justify-content: center;
-          animation: expGlowPulse 2.6s ease-in-out infinite;
-        }
-        @media (max-width: 720px) {
-          .exp-meta-right { text-align: left !important; margin-top: 10px; }
-        }
+        .exp-hexnode { animation: expGlowPulse 2.6s ease-in-out infinite; }
       `}</style>
 
-      <div style={{ maxWidth: 1120, margin: "0 auto", position: "relative", zIndex: 1 }}>
+      <div className="relative z-10 mx-auto max-w-[1120px]">
         <div data-aos="fade-right">
-          <p
-            style={{
-              color: "#00E5FF",
-              fontFamily: "monospace",
-              fontSize: 13,
-              letterSpacing: "4px",
-              marginBottom: 14,
-            }}
-          >
+          <p className="mb-3.5 font-mono text-[13px] tracking-[4px] text-cyan-400">
             // WORK HISTORY
           </p>
-          <h2
-            style={{
-              fontSize: "clamp(30px,4vw,44px)",
-              fontWeight: 800,
-              marginBottom: 60,
-              fontFamily: "'Poppins','Inter',system-ui,sans-serif",
-              letterSpacing: "-.01em",
-            }}
-          >
+          <h2 className="mb-16 font-['Poppins',_'Inter',_system-ui,_sans-serif] text-[clamp(30px,4vw,44px)] font-extrabold tracking-[-0.01em]">
             Where I've{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg,#00E5FF,#A78BFA)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
+            <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
               shipped.
             </span>
           </h2>
         </div>
 
-        <div
-          style={{
-            position: "relative",
-            borderLeft: "1.5px dashed rgba(0,229,255,.25)",
-            marginLeft: 22,
-          }}
-        >
+        <div className="relative ml-[22px] border-l-[1.5px] border-dashed border-cyan-400/25">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              style={{ position: "relative", paddingLeft: 44, paddingBottom: 56 }}
+              className="relative pb-14 pl-11"
               data-aos={index % 2 === 0 ? "fade-up-right" : "fade-up-left"}
               data-aos-delay={index * 120}
             >
               {/* Hex timeline node */}
               <div
-                className="exp-hexnode"
-                style={{
-                  position: "absolute",
-                  left: -24,
-                  top: 4,
-                  width: 44,
-                  height: 44,
-                  background: `linear-gradient(135deg, ${exp.color}22, ${exp.color}55)`,
-                  border: `1.5px solid ${exp.color}`,
-                  "--glow": exp.glow,
-                }}
+                className={`exp-hexnode absolute -left-6 top-1 flex h-11 w-11 items-center justify-center border bg-gradient-to-br [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)] ${exp.grad} ${exp.border} ${exp.glow}`}
               >
-                <exp.Icon size={17} color={exp.color} />
+                <exp.Icon size={17} className={exp.text} />
               </div>
 
-              <div
-                className="exp-card"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 18,
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    flexWrap: "wrap",
-                    gap: 12,
-                  }}
-                >
-                  <div style={{ maxWidth: 620 }}>
-                    <h3 style={{ fontSize: 18, fontWeight: 700, margin: 0, fontFamily: "'Poppins','Inter',system-ui,sans-serif" }}>
+              <div className="flex flex-col gap-[18px] rounded-2xl border border-cyan-400/[.14] bg-white/[.03] p-7 transition-all duration-300 hover:-translate-y-[3px] hover:border-cyan-400/45 hover:shadow-[0_12px_34px_rgba(0,229,255,0.08)]">
+                <div className="flex flex-row flex-wrap justify-between gap-3">
+                  <div className="max-w-[620px]">
+                    <h3 className="m-0 font-['Poppins',_'Inter',_system-ui,_sans-serif] text-lg font-bold">
                       {exp.title}
                     </h3>
 
                     {exp.badge && (
                       <div
                         data-aos="zoom-in"
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: 6,
-                          marginTop: 10,
-                          background: "rgba(251,191,36,.1)",
-                          border: "1px solid rgba(251,191,36,.35)",
-                          borderRadius: 999,
-                          padding: "5px 12px",
-                        }}
+                        className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-amber-400/35 bg-amber-400/10 px-3 py-[5px]"
                       >
-                        <FaTrophy size={11} color="#FBBF24" />
-                        <span style={{ fontSize: 11, color: "#FBBF24", fontFamily: "monospace" }}>
+                        <FaTrophy size={11} className="text-amber-400" />
+                        <span className="font-mono text-[11px] text-amber-400">
                           {exp.badge}
                         </span>
                       </div>
                     )}
 
-                    <p style={{ color: exp.color, marginTop: 8, fontSize: 14, fontWeight: 600 }}>
-                      {exp.company}
-                    </p>
+                    <p className={`mt-2 text-sm font-semibold ${exp.text}`}>{exp.company}</p>
 
                     {exp.badges.length > 0 && (
-                      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
+                      <div className="mt-4 flex flex-wrap gap-2">
                         {exp.badges.map((badge, i) => (
                           <span
                             key={i}
-                            className="exp-badge-pill"
-                            style={{
-                              color: exp.color,
-                              borderColor: `${exp.color}55`,
-                              background: `${exp.color}14`,
-                            }}
+                            className={`whitespace-nowrap rounded-full border px-3 py-[5px] font-mono text-[11px] font-semibold ${exp.text} ${exp.tagBorder} ${exp.tagBg}`}
                           >
                             {badge}
                           </span>
@@ -246,19 +160,19 @@ export default function ExperienceSection() {
                       </div>
                     )}
 
-                    <ul style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 12, padding: 0, listStyle: "none" }}>
+                    <ul className="mt-[18px] flex list-none flex-col gap-3 p-0">
                       {exp.points.map((point, i) => (
-                        <li key={i} style={{ display: "flex", gap: 10, color: "#94A3B8", fontSize: 14, lineHeight: 1.6 }}>
-                          <span style={{ color: exp.color, flexShrink: 0 }}>▸</span>
+                        <li key={i} className="flex gap-2.5 text-sm leading-[1.6] text-slate-400">
+                          <span className={`flex-shrink-0 ${exp.text}`}>▸</span>
                           <span>{point}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="exp-meta-right" style={{ textAlign: "right", color: "#64748B", fontSize: 12, flexShrink: 0 }}>
-                    <p style={{ margin: 0, fontWeight: 600 }}>{exp.duration}</p>
-                    <p style={{ margin: "4px 0 0" }}>{exp.location}</p>
+                  <div className="flex-shrink-0 text-right text-xs text-slate-500 max-[720px]:mt-2.5 max-[720px]:text-left">
+                    <p className="m-0 font-semibold">{exp.duration}</p>
+                    <p className="mt-1">{exp.location}</p>
                   </div>
                 </div>
               </div>
@@ -266,8 +180,6 @@ export default function ExperienceSection() {
           ))}
         </div>
       </div>
-
     </section>
-    
   );
 }

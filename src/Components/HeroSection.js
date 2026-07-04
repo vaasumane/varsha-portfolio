@@ -297,10 +297,7 @@ export default function HeroSection() {
     80, 45, 2000
   );
 
-  // AOS init
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true, easing: "ease-out-cubic" });
-  }, []);
+  
 
   // measure diagram container for responsive sizing
   useEffect(() => {

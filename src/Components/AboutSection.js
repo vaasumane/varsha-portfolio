@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 import {
   FaTrophy,
   FaCog,
@@ -22,328 +20,172 @@ const cards = [
     icon: <FaCog />,
     title: "Backend-first",
     desc: "Laravel architecture, API design, DB optimisation",
-    color: "#00E5FF",
-    glow: "rgba(0,229,255,0.12)",
+    text: "text-cyan-400",
+    iconBg: "bg-cyan-400/10",
+    iconBorder: "border-cyan-400/30",
+    hoverBorder: "hover:border-cyan-400/40",
+    hoverShadow: "hover:shadow-[0_8px_32px_rgba(0,229,255,0.15)]",
+    hoverGlow: "group-hover:shadow-[0_0_16px_rgba(0,229,255,0.55)]",
   },
   {
     icon: <FaShieldAlt />,
     title: "Security-focused",
     desc: "OpenSSL, RBAC, JWT, SSO — built in, not bolted on",
-    color: "#FBBF24",
-    glow: "rgba(251,191,36,0.12)",
+    text: "text-amber-400",
+    iconBg: "bg-amber-400/10",
+    iconBorder: "border-amber-400/30",
+    hoverBorder: "hover:border-amber-400/40",
+    hoverShadow: "hover:shadow-[0_8px_32px_rgba(251,191,36,0.15)]",
+    hoverGlow: "group-hover:shadow-[0_0_16px_rgba(251,191,36,0.55)]",
   },
   {
     icon: <FaLaptop />,
     title: "Full-stack",
     desc: "React frontends, REST APIs, and everything between",
-    color: "#A78BFA",
-    glow: "rgba(167,139,250,0.12)",
+    text: "text-violet-400",
+    iconBg: "bg-violet-400/10",
+    iconBorder: "border-violet-400/30",
+    hoverBorder: "hover:border-violet-400/40",
+    hoverShadow: "hover:shadow-[0_8px_32px_rgba(167,139,250,0.15)]",
+    hoverGlow: "group-hover:shadow-[0_0_16px_rgba(167,139,250,0.55)]",
   },
   {
     icon: <FaUsers />,
     title: "Team lead",
     desc: "Sprints, code reviews, stakeholder communication",
-    color: "#34D399",
-    glow: "rgba(52,211,153,0.12)",
+    text: "text-emerald-400",
+    iconBg: "bg-emerald-400/10",
+    iconBorder: "border-emerald-400/30",
+    hoverBorder: "hover:border-emerald-400/40",
+    hoverShadow: "hover:shadow-[0_8px_32px_rgba(52,211,153,0.15)]",
+    hoverGlow: "group-hover:shadow-[0_0_16px_rgba(52,211,153,0.55)]",
   },
 ];
 
 const links = [
   { href: "https://varshamane.vercel.app", target: "_blank", label: "🌐 Portfolio" },
-  { href: "https://github.com/vaasumane",   target: "_blank", label: "🐙 GitHub"    },
-  { href: "mailto:varshamane2002@gmail.com", target: undefined, label: "✉️ Email"   },
-  { href: undefined,                         target: undefined, label: "📍 Mumbai"  },
+  { href: "https://github.com/vaasumane", target: "_blank", label: "🐙 GitHub" },
+  { href: "mailto:varshamane2002@gmail.com", target: undefined, label: "✉️ Email" },
+  { href: undefined, target: undefined, label: "📍 Mumbai" },
 ];
 
 export default function SecondSection() {
- 
-
   return (
-    <>
-      <style>{`
-        .about-section {
-          background: linear-gradient(180deg, #060B18 0%, #090E1A 60%, #060B18 100%);
-          position: relative;
-          overflow: hidden;
-        }
-        .about-section::before {
-          content: '';
-          position: absolute;
-          top: -120px; left: 50%;
-          transform: translateX(-50%);
-          width: 700px; height: 400px;
-          background: radial-gradient(ellipse, rgba(0,229,255,0.06) 0%, transparent 70%);
-          pointer-events: none;
-        }
+    <section
+      className="relative overflow-hidden bg-gradient-to-b from-[#060B18] via-[#090E1A] to-[#060B18] px-6 py-20 text-white md:px-12 lg:px-20"
+      id="about"
+    >
+      {/* ambient glow behind heading */}
+      <div className="pointer-events-none absolute -top-32 left-1/2 h-[400px] w-[700px] -translate-x-1/2 bg-[radial-gradient(ellipse,rgba(0,229,255,0.06)_0%,transparent_70%)]" />
 
-        /* eyebrow */
-        .about-eyebrow {
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 11px;
-          letter-spacing: 0.18em;
-          color: #00E5FF;
-          text-transform: uppercase;
-          margin-bottom: 20px;
-        }
+      <div
+        className="relative mx-auto grid max-w-6xl grid-cols-1 items-start gap-14 lg:grid-cols-2"
+        data-aos="fade-up"
+        data-aos-duration="900"
+      >
+        {/* ── LEFT ── */}
+        <div>
+          <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-400">
+            // about me
+          </p>
 
-        /* heading */
-        .about-heading {
-          font-size: clamp(26px, 4vw, 40px);
-          font-weight: 800;
-          line-height: 1.15;
-          color: #F1F5F9;
-          font-family: 'Poppins', system-ui, sans-serif;
-          letter-spacing: -0.02em;
-        }
+          <h2 className="font-['Poppins',system-ui,sans-serif] text-[clamp(26px,4vw,40px)] font-extrabold leading-[1.15] tracking-[-0.02em] text-slate-100">
+            I build financial systems
+            <br />
+            <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+              that move real money.
+            </span>
+          </h2>
 
-        /* body text */
-        .about-body {
-          color: #94A3B8;
-          font-size: 15px;
-          line-height: 1.8;
-          margin-top: 20px;
-        }
+          <p className="mt-5 text-[15px] leading-8 text-slate-400">
+            With 3.5+ years in full-stack development, I've specialised in
+            fintech infrastructure — building back-end engines that power loan
+            origination, invoice management, and credit-risk visibility for
+            NBFC and banking clients.
+          </p>
 
-        /* badge */
-        .about-badge {
-          display: inline-block;
-          padding: 5px 13px;
-          border-radius: 999px;
-          border: 1px solid rgba(0,229,255,0.35);
-          background: rgba(0,229,255,0.08);
-          color: #00E5FF;
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 11px;
-          letter-spacing: 0.03em;
-          transition: background 0.2s, border-color 0.2s;
-        }
-        .about-badge:hover {
-          background: rgba(0,229,255,0.16);
-          border-color: rgba(0,229,255,0.6);
-        }
+          <p className="mt-5 text-[15px] leading-8 text-slate-400">
+            I care about code that's{" "}
+            <span className="font-bold text-slate-100">secure by design</span>.
+            OpenSSL encryption, RBAC access control, and regulated API
+            integrations are part of my daily vocabulary — not afterthoughts.
+          </p>
 
-        /* links */
-        .about-link {
-          color: #5D7192;
-          font-size: 13px;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          transition: color 0.2s;
-          cursor: pointer;
-        }
-        .about-link:hover { color: #00E5FF; }
-
-        /* award card */
-        .award-card {
-          border-radius: 16px;
-          padding: 24px;
-          margin-bottom: 20px;
-          background: linear-gradient(135deg, rgba(0,229,255,0.10), rgba(15,23,41,0.9));
-          border: 1px solid rgba(0,229,255,0.30);
-          box-shadow: 0 0 32px rgba(0,229,255,0.07), inset 0 0 24px rgba(0,229,255,0.03);
-          transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        .award-card:hover {
-          border-color: rgba(0,229,255,0.55);
-          box-shadow: 0 0 48px rgba(0,229,255,0.14);
-        }
-        .award-title {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-family: 'Poppins', system-ui, sans-serif;
-          font-weight: 700;
-          font-size: 16px;
-          color: #F1F5F9;
-        }
-        .award-trophy {
-          color: #FBBF24;
-          font-size: 20px;
-          filter: drop-shadow(0 0 8px rgba(251,191,36,0.7));
-        }
-        .award-body {
-          margin-top: 14px;
-          color: #94A3B8;
-          font-size: 14px;
-          line-height: 1.7;
-        }
-
-        /* feature card */
-        .feat-card {
-          background: #111827;
-          border: 1px solid rgba(255,255,255,0.06);
-          border-radius: 14px;
-          padding: 20px;
-          transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
-          cursor: default;
-        }
-        .feat-card:hover {
-          transform: translateY(-3px);
-        }
-        .feat-icon-wrap {
-          width: 40px; height: 40px;
-          border-radius: 10px;
-          display: flex; align-items: center; justify-content: center;
-          font-size: 18px;
-          margin-bottom: 14px;
-          transition: box-shadow 0.3s;
-        }
-        .feat-title {
-          font-family: 'Poppins', system-ui, sans-serif;
-          font-weight: 700;
-          font-size: 15px;
-          color: #F1F5F9;
-          margin-bottom: 6px;
-        }
-        .feat-desc {
-          color: #64748B;
-          font-size: 13px;
-          line-height: 1.55;
-        }
-
-        /* section divider */
-       
-      `}</style>
-
-      {/* top divider matching hero bottom */}
-      <div className="section-line" />
-
-      <section className="about-section text-white px-6 md:px-12 lg:px-20 py-20" id="about">
-        <div
-          className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-start"
-          data-aos="fade-up"
-          data-aos-duration="900"
-        >
-
-          {/* ── LEFT ── */}
-          <div>
-            <p className="about-eyebrow">// about me</p>
-
-            <h2 className="about-heading">
-              I build financial systems<br />
-              <span style={{
-                background: "linear-gradient(90deg, #00E5FF, #38BDF8 50%, #A78BFA)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}>
-                that move real money.
+          {/* Badges */}
+          <div className="mt-8 flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="150">
+            {badges.map((b, i) => (
+              <span
+                key={i}
+                className="inline-block rounded-full border border-cyan-400/35 bg-cyan-400/[.08] px-[13px] py-[5px] font-mono text-[11px] tracking-[0.03em] text-cyan-400 transition-colors duration-200 hover:border-cyan-400/60 hover:bg-cyan-400/[.16]"
+              >
+                {b}
               </span>
-            </h2>
-
-            <p className="about-body">
-              With 3.5+ years in full-stack development, I've specialised in
-              fintech infrastructure — building back-end engines that power loan
-              origination, invoice management, and credit-risk visibility for
-              NBFC and banking clients.
-            </p>
-
-            <p className="about-body">
-              I care about code that's{" "}
-              <span style={{ color: "#F1F5F9", fontWeight: 700 }}>
-                secure by design
-              </span>
-              . OpenSSL encryption, RBAC access control, and regulated API
-              integrations are part of my daily vocabulary — not afterthoughts.
-            </p>
-
-            {/* Badges */}
-            <div
-              className="flex flex-wrap gap-2 mt-8"
-              data-aos="fade-up"
-              data-aos-delay="150"
-            >
-              {badges.map((b, i) => (
-                <span key={i} className="about-badge">{b}</span>
-              ))}
-            </div>
-
-            {/* Links */}
-            <div
-              className="flex flex-wrap gap-6 mt-8"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              {links.map((l, i) =>
-                l.href ? (
-                  <a
-                    key={i}
-                    href={l.href}
-                    target={l.target}
-                    rel={l.target === "_blank" ? "noreferrer" : undefined}
-                    className="about-link"
-                  >
-                    {l.label}
-                  </a>
-                ) : (
-                  <span key={i} className="about-link">{l.label}</span>
-                )
-              )}
-            </div>
+            ))}
           </div>
 
-          {/* ── RIGHT ── */}
-          <div data-aos="fade-left" data-aos-delay="100" data-aos-duration="900">
-
-            {/* Award card */}
-            <div className="award-card">
-              <div className="award-title">
-                <FaTrophy className="award-trophy" />
-                Spot Award — SBI Factors Client
-              </div>
-              <p className="award-body">
-                Recognised by SBI for a critical contribution to the successful
-                go-live of the Loan Origination System — a high-stakes
-                enterprise delivery milestone.
-              </p>
-            </div>
-
-            {/* Feature cards grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {cards.map((card, i) => (
-                <div
+          {/* Links */}
+          <div className="mt-8 flex flex-wrap gap-6" data-aos="fade-up" data-aos-delay="200">
+            {links.map((l, i) =>
+              l.href ? (
+                <a
                   key={i}
-                  className="feat-card"
-                  data-aos="fade-up"
-                  data-aos-delay={100 + i * 80}
-                  style={{
-                    "--card-color": card.color,
-                    "--card-glow": card.glow,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = card.color + "55";
-                    e.currentTarget.style.boxShadow = `0 8px 32px ${card.color}18`;
-                    e.currentTarget.querySelector(".feat-icon-wrap").style.boxShadow =
-                      `0 0 16px ${card.color}55`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
-                    e.currentTarget.style.boxShadow = "none";
-                    e.currentTarget.querySelector(".feat-icon-wrap").style.boxShadow = "none";
-                  }}
+                  href={l.href}
+                  target={l.target}
+                  rel={l.target === "_blank" ? "noreferrer" : undefined}
+                  className="inline-flex cursor-pointer items-center gap-[5px] text-[13px] text-slate-500 transition-colors duration-200 hover:text-cyan-400"
                 >
-                  <div
-                    className="feat-icon-wrap"
-                    style={{
-                      background: card.glow,
-                      color: card.color,
-                      border: `1px solid ${card.color}30`,
-                    }}
-                  >
-                    {card.icon}
-                  </div>
-                  <h3 className="feat-title">{card.title}</h3>
-                  <p className="feat-desc">{card.desc}</p>
-                </div>
-              ))}
-            </div>
+                  {l.label}
+                </a>
+              ) : (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-[5px] text-[13px] text-slate-500"
+                >
+                  {l.label}
+                </span>
+              )
+            )}
           </div>
         </div>
-      </section>
 
-      {/* bottom divider */}
-      <div className="section-line" />
-    </>
+        {/* ── RIGHT ── */}
+        <div data-aos="fade-left" data-aos-delay="100" data-aos-duration="900">
+          {/* Award card */}
+          <div className="mb-5 rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-400/10 to-slate-900/90 p-6 shadow-[0_0_32px_rgba(0,229,255,0.07)] transition-all duration-300 hover:border-cyan-400/55 hover:shadow-[0_0_48px_rgba(0,229,255,0.14)]">
+            <div className="flex items-center gap-3 font-['Poppins',system-ui,sans-serif] text-base font-bold text-slate-100">
+              <FaTrophy className="text-xl text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.7)]" />
+              Spot Award — SBI Factors Client
+            </div>
+            <p className="mt-3.5 text-sm leading-[1.7] text-slate-400">
+              Recognised by SBI for a critical contribution to the successful
+              go-live of the Loan Origination System — a high-stakes
+              enterprise delivery milestone.
+            </p>
+          </div>
+
+          {/* Feature cards grid */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {cards.map((card, i) => (
+              <div
+                key={i}
+                className={`group cursor-default rounded-2xl border border-white/[.06] bg-[#111827] p-5 transition-all duration-300 hover:-translate-y-[3px] ${card.hoverBorder} ${card.hoverShadow}`}
+                data-aos="fade-up"
+                data-aos-delay={100 + i * 80}
+              >
+                <div
+                  className={`mb-3.5 flex h-10 w-10 items-center justify-center rounded-[10px] border text-lg transition-shadow duration-300 ${card.iconBg} ${card.iconBorder} ${card.text} ${card.hoverGlow}`}
+                >
+                  {card.icon}
+                </div>
+                <h3 className="mb-1.5 font-['Poppins',system-ui,sans-serif] text-[15px] font-bold text-slate-100">
+                  {card.title}
+                </h3>
+                <p className="text-[13px] leading-[1.55] text-slate-500">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

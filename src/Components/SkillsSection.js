@@ -12,166 +12,119 @@ const skillData = [
   {
     title: "Backend",
     Icon: FaServer,
-    color: "#00E5FF",
-    glow: "rgba(0,229,255,0.5)",
+    text: "text-cyan-400",
+    border: "border-cyan-400",
+    grad: "from-cyan-400/[.13] to-cyan-400/[.33]",
+    glow: "shadow-[0_0_12px_rgba(0,229,255,0.5)]",
+    dot: "bg-cyan-400 shadow-[0_0_6px_rgba(0,229,255,0.5)]",
     skills: ["PHP 8 · Laravel 10+", "CodeIgniter", "REST API Design", "MVC Architecture", "OOP"],
   },
   {
     title: "Frontend",
     Icon: FaCode,
-    color: "#A78BFA",
-    glow: "rgba(167,139,250,0.5)",
+    text: "text-violet-400",
+    border: "border-violet-400",
+    grad: "from-violet-400/[.13] to-violet-400/[.33]",
+    glow: "shadow-[0_0_12px_rgba(167,139,250,0.5)]",
+    dot: "bg-violet-400 shadow-[0_0_6px_rgba(167,139,250,0.5)]",
     skills: ["React.js", "JavaScript", "HTML5 / CSS3", "Tailwind CSS", "Bootstrap · jQuery"],
   },
   {
     title: "Database",
     Icon: FaDatabase,
-    color: "#FBBF24",
-    glow: "rgba(251,191,36,0.5)",
+    text: "text-amber-400",
+    border: "border-amber-400",
+    grad: "from-amber-400/[.13] to-amber-400/[.33]",
+    glow: "shadow-[0_0_12px_rgba(251,191,36,0.5)]",
+    dot: "bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.5)]",
     skills: ["MySQL", "Eloquent ORM", "Query Optimisation", "Schema Design"],
   },
   {
     title: "Security",
     Icon: FaShieldAlt,
-    color: "#FB923C",
-    glow: "rgba(251,146,60,0.5)",
+    text: "text-orange-400",
+    border: "border-orange-400",
+    grad: "from-orange-400/[.13] to-orange-400/[.33]",
+    glow: "shadow-[0_0_12px_rgba(251,146,60,0.5)]",
+    dot: "bg-orange-400 shadow-[0_0_6px_rgba(251,146,60,0.5)]",
     skills: ["OpenSSL Encryption", "RBAC", "JWT Authentication", "SSO", "PII Data Protection"],
   },
   {
     title: "API Integrations",
     Icon: FaBoxOpen,
-    color: "#60A5FA",
-    glow: "rgba(96,165,250,0.5)",
+    text: "text-blue-400",
+    border: "border-blue-400",
+    grad: "from-blue-400/[.13] to-blue-400/[.33]",
+    glow: "shadow-[0_0_12px_rgba(96,165,250,0.5)]",
+    dot: "bg-blue-400 shadow-[0_0_6px_rgba(96,165,250,0.5)]",
     skills: ["Karza — PAN Verify", "CRIF — Credit Bureau", "Corpistory — Corp Data", "Stripe · PayPal", "YouTube Data API"],
   },
   {
     title: "Tools",
     Icon: FaTools,
-    color: "#C084FC",
-    glow: "rgba(192,132,252,0.5)",
+    text: "text-purple-400",
+    border: "border-purple-400",
+    grad: "from-purple-400/[.13] to-purple-400/[.33]",
+    glow: "shadow-[0_0_12px_rgba(192,132,252,0.5)]",
+    dot: "bg-purple-400 shadow-[0_0_6px_rgba(192,132,252,0.5)]",
     skills: ["Git", "Agile / Scrum", "Postman", "VS Code"],
   },
 ];
 
 export default function SkillsSection() {
   return (
-   <>
     <section
-      style={{
-        background:
-          "radial-gradient(ellipse 70% 60% at 70% 30%, #0A0F1E 0%, #060B18 55%, #040810 100%)",
-        color: "#F1F5F9",
-        padding: "96px 3vw",
-        position: "relative",
-        overflow: "hidden",
-      }}
+      className="relative overflow-hidden bg-[radial-gradient(ellipse_70%_60%_at_70%_30%,#0A0F1E_0%,#060B18_55%,#040810_100%)] px-[3vw] py-24 text-slate-100"
       id="skills"
     >
       <style>{`
         @keyframes skillHexGlow {
-          0%,100% { box-shadow: 0 0 12px var(--glow); }
-          50%     { box-shadow: 0 0 22px var(--glow); }
+          0%,100% { filter: brightness(1); }
+          50%     { filter: brightness(1.35); }
         }
-        .skill-card {
-          background: rgba(255,255,255,.03);
-          border: 1px solid rgba(0,229,255,.14);
-          border-radius: 18px;
-          padding: 26px;
-          transition: border-color .3s, transform .25s, box-shadow .3s;
-        }
-        .skill-card:hover {
-          border-color: rgba(0,229,255,.45);
-          transform: translateY(-4px);
-          box-shadow: 0 14px 34px rgba(0,229,255,.08);
-        }
-        .skill-hex {
-          clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
-          display: flex; align-items: center; justify-content: center;
-          animation: skillHexGlow 3s ease-in-out infinite;
-        }
+        .skill-hex { animation: skillHexGlow 3s ease-in-out infinite; }
       `}</style>
 
-      <div style={{ margin: "0 auto", position: "relative", zIndex: 1 }}>
-        <div style={{ textAlign: "center", marginBottom: 64 }} data-aos="fade-up">
-          <p style={{ color: "#00E5FF", fontFamily: "monospace", fontSize: 13, letterSpacing: "4px", marginBottom: 14 }}>
+      <div className="relative z-10 mx-auto">
+        <div className="mb-16 text-center" data-aos="fade-up">
+          <p className="mb-3.5 font-mono text-[13px] tracking-[4px] text-cyan-400">
             // TECH STACK
           </p>
-          <h2
-            style={{
-              fontSize: "clamp(26px,4vw,40px)",
-              fontWeight: 800,
-              fontFamily: "'Poppins','Inter',system-ui,sans-serif",
-            }}
-          >
+          <h2 className="font-['Poppins',_'Inter',_system-ui,_sans-serif] text-[clamp(26px,4vw,40px)] font-extrabold">
             Skills &{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg,#00E5FF,#A78BFA)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
+            <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
               tools.
             </span>
           </h2>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: 18,
-          }}
-        >
+        <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {skillData.map((item, index) => (
             <div
               key={index}
-              className="skill-card"
+              className="rounded-2xl border border-cyan-400/[.14] bg-white/[.03] p-[26px] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/45 hover:shadow-[0_14px_34px_rgba(0,229,255,0.08)]"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 22 }}>
+              <div className="mb-[22px] flex items-center gap-3.5">
                 <div
-                  className="skill-hex"
-                  style={{
-                    width: 42,
-                    height: 42,
-                    flexShrink: 0,
-                    background: `linear-gradient(135deg, ${item.color}22, ${item.color}55)`,
-                    border: `1.5px solid ${item.color}`,
-                    "--glow": item.glow,
-                  }}
+                  className={`skill-hex flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center border bg-gradient-to-br [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)] ${item.grad} ${item.border} ${item.glow}`}
                 >
-                  <item.Icon size={16} color={item.color} />
+                  <item.Icon size={16} className={item.text} />
                 </div>
-                <h3 style={{ fontWeight: 700, fontSize: 16, margin: 0, fontFamily: "'Poppins','Inter',system-ui,sans-serif" }}>
+                <h3 className="m-0 font-['Poppins',_'Inter',_system-ui,_sans-serif] text-base font-bold">
                   {item.title}
                 </h3>
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <div className="flex flex-col gap-3">
                 {item.skills.map((skill, i) => (
                   <div
                     key={i}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 10,
-                      paddingBottom: 12,
-                      borderBottom: "1px solid rgba(148,163,184,.12)",
-                    }}
+                    className="flex items-center gap-2.5 border-b border-slate-400/[.12] pb-3"
                   >
-                    <span
-                      style={{
-                        width: 6,
-                        height: 6,
-                        borderRadius: "50%",
-                        background: item.color,
-                        boxShadow: `0 0 6px ${item.glow}`,
-                        flexShrink: 0,
-                      }}
-                    />
-                    <span style={{ color: "#94A3B8", fontSize: 13 }}>{skill}</span>
+                    <span className={`h-1.5 w-1.5 flex-shrink-0 rounded-full ${item.dot}`} />
+                    <span className="text-[13px] text-slate-400">{skill}</span>
                   </div>
                 ))}
               </div>
@@ -182,52 +135,28 @@ export default function SkillsSection() {
         {/* Bottom expertise panel — echoes the Hero's glowing center circle */}
         <div
           data-aos="zoom-in"
-          style={{
-            marginTop: 40,
-            borderRadius: 24,
-            border: "1.5px solid rgba(0,229,255,.3)",
-            background: "linear-gradient(120deg, rgba(0,229,255,.08), rgba(167,139,250,.06))",
-            boxShadow: "0 0 40px rgba(0,229,255,.08), inset 0 0 30px rgba(0,229,255,.04)",
-            padding: "34px clamp(20px,4vw,40px)",
-          }}
+          className="mt-10 rounded-3xl border-[1.5px] border-cyan-400/30 bg-gradient-to-r from-cyan-400/[.08] to-violet-400/[.06] p-[34px_clamp(20px,4vw,40px)] shadow-[0_0_40px_rgba(0,229,255,0.08),inset_0_0_30px_rgba(0,229,255,0.04)]"
         >
-          <p style={{ color: "#00E5FF", fontFamily: "monospace", letterSpacing: "3px", fontSize: 13, marginBottom: 16 }}>
+          <p className="mb-4 font-mono text-[13px] tracking-[3px] text-cyan-400">
             DOMAIN EXPERTISE
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: 24,
-            }}
-          >
+          <div className="flex flex-row flex-wrap items-center justify-between gap-6">
             <div>
-              <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10, fontFamily: "'Poppins','Inter',system-ui,sans-serif" }}>
+              <h3 className="mb-2.5 font-['Poppins',_'Inter',_system-ui,_sans-serif] text-lg font-bold">
                 Fintech · NBFC · Service Based
               </h3>
-              <p style={{ color: "#94A3B8", lineHeight: 1.8, fontSize: 14, margin: 0, maxWidth: 560 }}>
+              <p className="m-0 max-w-[560px] text-sm leading-8 text-slate-400">
                 LOS · LMS · Credit Risk · CRISIL Ratings · Limit Exposure ·
                 Invoice Factoring · Early Warning Systems
               </p>
             </div>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+            <div className="flex flex-wrap gap-2.5">
               {["SBI Factors", "NBFC Compliance", "Regulated APIs"].map((tag, i) => (
                 <span
                   key={i}
-                  style={{
-                    padding: "8px 16px",
-                    borderRadius: 999,
-                    border: "1px solid rgba(0,229,255,.3)",
-                    background: "rgba(0,229,255,.08)",
-                    color: "#38BDF8",
-                    fontSize: 12,
-                    fontFamily: "monospace",
-                  }}
+                  className="rounded-full border border-cyan-400/30 bg-cyan-400/[.08] px-4 py-2 font-mono text-xs text-sky-400"
                 >
                   {tag}
                 </span>
@@ -237,8 +166,5 @@ export default function SkillsSection() {
         </div>
       </div>
     </section>
-      <div className="section-line" />
-
-   </>
   );
 }
