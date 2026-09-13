@@ -69,6 +69,16 @@ const skillData = [
     dot: "bg-purple-400 shadow-[0_0_6px_rgba(192,132,252,0.5)]",
     skills: ["Git", "Agile / Scrum", "Postman", "VS Code"],
   },
+  {
+    title: "Python",
+    Icon: FaCode,
+    text: "text-green-400",
+    border: "border-green-400",
+    grad: "from-green-400/[.13] to-green-400/[.33]",
+    glow: "shadow-[0_0_12px_rgba(74,222,128,0.5)]",
+    dot: "bg-green-400 shadow-[0_0_6px_rgba(74,222,128,0.5)]",
+    skills: ["Python Basics", "Streamlit", "LLM Integration", "AI Chatbots", "🌱 Learning"],
+  },
 ];
 
 export default function SkillsSection() {

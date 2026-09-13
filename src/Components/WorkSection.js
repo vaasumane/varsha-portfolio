@@ -86,6 +86,18 @@ const projects = [
     live: "Live",
     URL: "https://github.com/vaasumane/food-villa",
   },
+  {
+    category: ["Python • AI", "🌱 Learning"],
+    title: "DevNex — AI Chatbot",
+    description:
+      "A conversational AI chatbot built with Python and deployed on Streamlit. Interacts with users in real time using an LLM backend — part of my Python and AI learning journey.",
+    tags: ["Python", "Streamlit", "LLM", "AI"],
+    text: "text-green-400",
+    tagBorder: "border-green-400/[.33]",
+    tagBg: "bg-green-400/[.08]",
+    live: "Live",
+    URL: "https://devnex.streamlit.app/",
+  },
 ];
 
 export default function FourthSection() {
